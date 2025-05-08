@@ -30,6 +30,7 @@ class ProfilePage extends StatelessWidget {
               controller: _username,
               hintText: "Username",
               isPassword:false,
+              border_color: ColorList.bgColor
             ),
             SizedBox(height: 25,),
 
@@ -37,6 +38,7 @@ class ProfilePage extends StatelessWidget {
               controller: _email,
               hintText: "Email",
               isPassword:false,
+              border_color: ColorList.bgColor
             ),
 
             SizedBox(height: 25,),
@@ -45,8 +47,9 @@ class ProfilePage extends StatelessWidget {
               controller: _phone,
               hintText: "Phone",
               isPassword:false,
+              isNumber: true,
+              border_color: ColorList.bgColor
             ),
-
 
             SizedBox(height: 25,),
 

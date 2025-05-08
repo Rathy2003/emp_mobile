@@ -4,9 +4,11 @@ import 'package:emp_mobile/utils/colors.dart';
 import 'package:emp_mobile/widgets/card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final current_date = DateFormat('dd/MM/''yyyy').format(DateTime.now());
+  // const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Kak Kheang",style: TextStyle(fontSize: 20,color: Colors.black),),
+                        Text("Admin",style: TextStyle(fontSize: 20,color: Colors.black),),
                         Text("01/02/1999",style: TextStyle(fontSize: 20,color: Colors.black),),
                         Text("096 594 845",style: TextStyle(fontSize: 20,color: Colors.black),)
                       ],
@@ -92,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Image.asset("assets/images/calendar.png",height: 30,),
                         SizedBox(width: 10,),
-                        Text("22/01/2025",
+                        Text(current_date,
                           style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white),
                           overflow: TextOverflow.ellipsis,
                         )
@@ -125,6 +127,7 @@ class HomeScreen extends StatelessWidget {
                     )
                 ),
                 child: GridView(
+                  physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       crossAxisSpacing: 18,
@@ -139,7 +142,7 @@ class HomeScreen extends StatelessWidget {
                       url: "assets/images/overtime.png",
                     ),
                     ActionsCard(
-                      label: "Request Leave",
+                      label: "Leave",
                       url: "assets/images/paper.png",
 
                     ),

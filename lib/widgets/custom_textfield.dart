@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 
 class CustomTextfield extends StatelessWidget {
 
-  const CustomTextfield({super.key,required this.hintText,required this.isPassword,required this.controller});
+  const CustomTextfield({super.key,required this.hintText,required this.isPassword,required this.controller,this.isNumber=false,this.border_color=Colors.orange});
 
   final String? hintText;
   final TextEditingController? controller;
   final bool isPassword;
+  final bool isNumber;
+  final Color border_color;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class CustomTextfield extends StatelessWidget {
       child: TextField(
         controller: controller,
         obscureText: isPassword,
+        keyboardType: isNumber ? TextInputType.number : TextInputType.text,
         decoration: InputDecoration(
             filled: true,
             hintText: hintText,
@@ -31,7 +34,7 @@ class CustomTextfield extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                    color: Colors.deepOrangeAccent,
+                    color: border_color,
                     width: 2
                 )
             )
