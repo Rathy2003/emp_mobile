@@ -33,7 +33,7 @@ class _QRViewExampleState extends State<QRViewExample> {
       children: [
         _buildQrView(context),
         Positioned(
-          top: 20,
+          top: 30,
           right: 20,
           child: IconButton(
             onPressed: ()=>{
@@ -49,14 +49,13 @@ class _QRViewExampleState extends State<QRViewExample> {
   Widget _buildQrView(BuildContext context) {
     var scanArea = (MediaQuery.of(context).size.width < 400 ||
         MediaQuery.of(context).size.height < 400)
-        ? 150.0
+        ? 280.0
         : 300.0;
     return QRView(
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
       overlay: QrScannerOverlayShape(
           borderColor: Colors.blue,
-
           borderRadius: 10,
           borderLength: 30,
           borderWidth: 10,

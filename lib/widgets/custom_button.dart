@@ -1,3 +1,4 @@
+import 'package:emp_mobile/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -19,10 +20,15 @@ class CustomButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
+            overlayColor: ColorList.bgColor,
             backgroundColor: color,
             elevation: 0,
+            shadowColor: Colors.blue,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.zero
+            )
           ),
-          onPressed: ()=> onPress,
+          onPressed: onPress,
           child: Text(label!,style: TextStyle(fontSize: 18,color: textColor),)
       ),
     );

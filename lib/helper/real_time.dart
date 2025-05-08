@@ -22,8 +22,8 @@ class RealTimeClock extends StatelessWidget {
             snapshot.data!,
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold,color: Colors.white),
           );
-        } else {
-          return CircularProgressIndicator();
+        }else{
+          return Text("");
         }
       },
     );

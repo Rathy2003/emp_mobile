@@ -25,7 +25,6 @@ class ProfilePage extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-
             SizedBox(height: 25,),
             CustomTextfield(
               controller: _username,
@@ -53,7 +52,7 @@ class ProfilePage extends StatelessWidget {
 
             // save button
             CustomButton(
-                onPress: () => auth_controller.logout(),
+                onPress: () => print("Saved"),
                 color: ColorList.bgColor,
                 textColor: Colors.white,
                 label: "Save"

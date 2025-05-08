@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ActionsCard extends StatelessWidget {
-  const ActionsCard({super.key});
+  const ActionsCard({super.key,required this.label,required this.url});
+  final String? label;
+  final String? url;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +26,9 @@ class ActionsCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("assets/images/report.png",height: 40,),
+          Image.asset(url!,height: 40,),
           SizedBox(height: 5,),
-          Text("Report",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),)
+          Text(label!,style: TextStyle(fontSize: 13,fontWeight: FontWeight.w500),)
         ],
       ),
     );
